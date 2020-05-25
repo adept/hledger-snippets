@@ -13,7 +13,6 @@ main = do
   let o2020 = def{query_="expenses",average_=True,row_total_=True,period_=MonthPeriod 2020 4}
   let y2019report = multiBalanceReport d o2019 j2019
   let y2020report = multiBalanceReport d o2020 j2020
-  --putStrLn $ multiBalanceReportAsText o2019 y2019report
-  --putStrLn $ multiBalanceReportAsText o2020 y2020report
+
   let pastAsBudget = combineBudgetAndActual y2019report{prDates=prDates y2020report} y2020report 
   putStrLn $ budgetReportAsText def pastAsBudget
